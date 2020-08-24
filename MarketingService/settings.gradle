@@ -1,0 +1,3 @@
+rootProject.name = 'MarketingService'
+includeBuild '../OAService'
+includeBuild '../core'

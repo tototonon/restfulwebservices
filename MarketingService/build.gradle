@@ -1,0 +1,36 @@
+plugins {
+	id 'org.springframework.boot' version '2.3.1.RELEASE'
+	id 'io.spring.dependency-management' version '1.0.9.RELEASE'
+	id 'java'
+}
+
+group = 'de.thro.inf.vv'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.8'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	runtimeOnly 'com.h2database:h2'
+	compile group: 'com.google.code.gson', name: 'gson', version: '2.8.6'
+	compile group: 'com.google.code.gson', name: 'gson', version: '2.8.6'
+	compile group: 'org.apache.camel', name: 'camel-core', version: '3.3.0'
+	compile group: 'org.apache.camel', name: 'camel-rabbitmq', version: '3.3.0'
+	compile group: 'org.apache.camel', name: 'camel-jsonpath', version: '3.3.0'
+
+
+	compile group: 'com.rabbitmq', name: 'amqp-client', version: '5.9.0'
+	compile group: 'de.thro.inf.vv', name: 'OAService', version: '0.0.1-SNAPSHOT'
+	compile group: 'de.thro.inf.vv', name: 'core', version: '1.0'
+	testImplementation('org.springframework.boot:spring-boot-starter-test') {
+		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
+	}
+}
+
+test {
+	useJUnitPlatform()
+}
